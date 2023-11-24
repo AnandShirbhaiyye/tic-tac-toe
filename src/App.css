@@ -12,8 +12,17 @@
   cursor: pointer;
   transition: 0.5s;
   box-shadow: 0px 0px 20px 0px #abcded;
+  z-index: 100;
 }
 .row{
   display: flex;
   justify-content: center;
+}
+.board{
+  display: block;
+  margin: 20px auto;
+  background-color: rgb(159, 86, 227);
+  width: fit-content;
+  padding: 10px;
+  border-radius: 5px;
 }
