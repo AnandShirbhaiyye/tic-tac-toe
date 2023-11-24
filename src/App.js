@@ -1,12 +1,28 @@
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
-   <>
-    <div className="App">
-     <h1>TIC-TAC-TOE...✅❎</h1>
-     </div>
-   </>
+    <>
+      <div className="App">
+        <h1 className="text-center">✅...TIC-TAC-TOE...❎</h1>
+
+        <div className="row">
+          <div className="box"></div>
+          <div className="box"></div>
+          <div className="box"></div>
+        </div>
+        <div className="row">
+          <div className="box"></div>
+          <div className="box"></div>
+          <div className="box"></div>
+        </div>
+        <div className="row">
+          <div className="box"></div>
+          <div className="box"></div>
+          <div className="box"></div>
+        </div>
+      </div>
+    </>
   );
 }
 

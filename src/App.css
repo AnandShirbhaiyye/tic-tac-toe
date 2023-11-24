@@ -1,0 +1,19 @@
+.text-center{
+  text-align: center;
+}
+.box{
+  background-color: azure;
+  border: 1px solid gray;
+  width: 100px;
+  height: 100px;
+}
+.box:hover{
+  background-color: rgb(196, 149, 240);
+  cursor: pointer;
+  transition: 0.5s;
+  box-shadow: 0px 0px 20px 0px #abcded;
+}
+.row{
+  display: flex;
+  justify-content: center;
+}
