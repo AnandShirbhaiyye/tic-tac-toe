@@ -16,49 +16,66 @@ function App() {
   });
   const [winner, setWinner] = useState(null);
 
-  const checkWinner = () =>{
-    const symbol = player ===1 ? "✅" : "❎";
+  const checkWinner = () => {
+    const symbol = player === 1 ? "✅" : "❎";
 
     if (board[1] === symbol && board[2] === symbol && board[3] === symbol) {
       setWinner(player);
-    }
-    else if (board[4] === symbol && board[5] === symbol && board[6] === symbol) {
+    } else if (
+      board[4] === symbol &&
+      board[5] === symbol &&
+      board[6] === symbol
+    ) {
       setWinner(player);
-    }
-    else if (board[7] === symbol && board[8] === symbol && board[9] === symbol) {
+    } else if (
+      board[7] === symbol &&
+      board[8] === symbol &&
+      board[9] === symbol
+    ) {
       setWinner(player);
-    }
-    else if (board[1] === symbol && board[4] === symbol && board[7] === symbol) {
+    } else if (
+      board[1] === symbol &&
+      board[4] === symbol &&
+      board[7] === symbol
+    ) {
       setWinner(player);
-    }
-    else if (board[2] === symbol && board[5] === symbol && board[8] === symbol) {
+    } else if (
+      board[2] === symbol &&
+      board[5] === symbol &&
+      board[8] === symbol
+    ) {
       setWinner(player);
-    }
-    else if (board[3] === symbol && board[6] === symbol && board[9] === symbol) {
+    } else if (
+      board[3] === symbol &&
+      board[6] === symbol &&
+      board[9] === symbol
+    ) {
       setWinner(player);
-    }
-    else if (board[1] === symbol && board[5] === symbol && board[9] === symbol) {
+    } else if (
+      board[1] === symbol &&
+      board[5] === symbol &&
+      board[9] === symbol
+    ) {
       setWinner(player);
-    }
-    else if (board[3] === symbol && board[5] === symbol && board[7] === symbol) {
+    } else if (
+      board[3] === symbol &&
+      board[5] === symbol &&
+      board[7] === symbol
+    ) {
       setWinner(player);
     }
 
     setPlayer(player === 1 ? 2 : 1);
-  }
-
-  
+  };
 
   const play = (boxNo) => {
-
     if (board[boxNo] !== "" || winner !== null) {
       return;
     }
-    if(player ===1){
-      setBoard({...board, [boxNo]: "✅"})
-    }
-    else{
-      setBoard({...board, [boxNo]: "❎"})
+    if (player === 1) {
+      setBoard({ ...board, [boxNo]: "✅" });
+    } else {
+      setBoard({ ...board, [boxNo]: "❎" });
     }
   };
 
@@ -74,14 +91,14 @@ function App() {
       7: "",
       8: "",
       9: "",
-    })
+    });
     setWinner(null);
-  }
+  };
 
   useEffect(() => {
     checkWinner();
-  }, [board])
-  
+  }, [board]);
+
   return (
     <>
       <div className="App">
@@ -178,7 +195,9 @@ function App() {
           </div>
         </div>
 
-        <button type='button' className='reset' onClick={reset}>Reset</button>
+        <button type="button" className="reset" onClick={reset}>
+          Reset
+        </button>
       </div>
     </>
   );
