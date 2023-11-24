@@ -15,7 +15,20 @@ function App() {
     9: "",
   });
 
-  const play = () => {};
+  const play = (boxNo) => {
+
+    if(board[boxNo] !== ""){
+      return;
+    }
+    if(player ===1){
+      setBoard({...board, [boxNo]: "✅"})
+    }
+    else{
+      setBoard({...board, [boxNo]: "❎"})
+    }
+
+    setPlayer(player === 1 ? 2 : 1)
+  };
   return (
     <>
       <div className="App">
