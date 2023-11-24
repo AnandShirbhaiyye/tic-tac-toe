@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
@@ -14,10 +14,44 @@ function App() {
     8: "",
     9: "",
   });
+  const [winner, setWinner] = useState(null);
+
+  const checkWinner = () =>{
+    const symbol = player ===1 ? "✅" : "❎";
+
+    if (board[1] === symbol && board[2] === symbol && board[3] === symbol) {
+      setWinner(player);
+    }
+    else if (board[4] === symbol && board[5] === symbol && board[6] === symbol) {
+      setWinner(player);
+    }
+    else if (board[7] === symbol && board[8] === symbol && board[9] === symbol) {
+      setWinner(player);
+    }
+    else if (board[1] === symbol && board[4] === symbol && board[7] === symbol) {
+      setWinner(player);
+    }
+    else if (board[2] === symbol && board[5] === symbol && board[8] === symbol) {
+      setWinner(player);
+    }
+    else if (board[3] === symbol && board[6] === symbol && board[9] === symbol) {
+      setWinner(player);
+    }
+    else if (board[1] === symbol && board[5] === symbol && board[9] === symbol) {
+      setWinner(player);
+    }
+    else if (board[3] === symbol && board[5] === symbol && board[7] === symbol) {
+      setWinner(player);
+    }
+
+    setPlayer(player === 1 ? 2 : 1);
+  }
+
+  
 
   const play = (boxNo) => {
 
-    if(board[boxNo] !== ""){
+    if (board[boxNo] !== "" || winner !== null) {
       return;
     }
     if(player ===1){
@@ -26,13 +60,32 @@ function App() {
     else{
       setBoard({...board, [boxNo]: "❎"})
     }
-
-    setPlayer(player === 1 ? 2 : 1)
   };
+
+  const reset = () => {
+    setPlayer(1);
+    setBoard({
+      1: "",
+      2: "",
+      3: "",
+      4: "",
+      5: "",
+      6: "",
+      7: "",
+      8: "",
+      9: "",
+    })
+    setWinner(null);
+  }
+
+  useEffect(() => {
+    checkWinner();
+  }, [board])
+  
   return (
     <>
       <div className="App">
-        <h1 className="text-center">✅...TIC-TAC-TOE...❎</h1>
+        <h1 className="text-center">TIC-TAC-TOE</h1>
 
         <div className="players-container">
           <span className="player-title"> Player 1: ✅</span>
@@ -124,6 +177,8 @@ function App() {
             </div>
           </div>
         </div>
+
+        <button type='button' className='reset' onClick={reset}>Reset</button>
       </div>
     </>
   );
