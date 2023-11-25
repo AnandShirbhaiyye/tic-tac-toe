@@ -1,3 +1,12 @@
+.tic-tac-toe-title{
+    padding: 2px;
+    margin: 10px;
+    border-radius: 12px;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    border: 5px double black;
+    background-color: aliceblue;
+}
 .text-center{
   text-align: center;
 }
@@ -29,6 +38,7 @@
   width: fit-content;
   padding: 10px;
   border-radius: 5px;
+  box-shadow: 0px 0px 15px 0px #abcded;
 }
 .players-container{
   display: flex;
@@ -36,9 +46,14 @@
 }
 .player-title{
   font-size: 25px;
+  background-color: whitesmoke;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px black;
 }
 .current-text{
-  font-size: 22px;
+  font-size: 25px;
 }
 .reset{
   background-color: rgb(159, 86, 227);

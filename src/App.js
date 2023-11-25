@@ -102,8 +102,9 @@ function App() {
   return (
     <>
       <div className="App">
-        <h1 className="text-center">TIC-TAC-TOE</h1>
-
+      <div className="tic-tac-toe-title">
+      <h1 className="text-center">TIC-TAC-TOE</h1>
+      </div>
         <div className="players-container">
           <span className="player-title"> Player 1: ✅</span>
 
